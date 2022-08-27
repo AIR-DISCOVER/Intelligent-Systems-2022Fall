@@ -1,74 +1,63 @@
-# ICRA-RM-Sim2Real
+# Sim2Real 课程比赛指南
 
-[![Join the chat at https://gitter.im/ICRA-RM-Sim2Real/community](https://badges.gitter.im/Join%20Chat.svg)](https://gitter.im/ICRA-RM-Sim2Real/community?utm_source=badge&utm_medium=badge&utm_content=badge)
+[toc]
 
-![RoboMasterEP](./assets/RoboMasterEP.gif)
+<img src="./assets/RoboMasterEP.gif" alt="RoboMasterEP" style="zoom: 50%;" />
 
 The RoboMaster EP chassis
 
-![RMUS-playground](./assets/RMUS-playground.png)
+<img src="./assets/RMUS-playground.png" alt="RMUS-playground" style="zoom:50%;" />
 
 The RMUS playground
 
-This repository is dedicated to provide the essential information for developpers to participate the [RoboMaster University Sim2Real Challenge](https://air.tsinghua.edu.cn/robomaster/sim2real_icra22.html).
+## 预备知识
 
-The github repo and gitee mirror are provided for various users:
-- https://gitee.com/RMUS/ICRA-RM-Sim2Real/
-- https://github.com/AIR-DISCOVER/ICRA-RM-Sim2Real
+### Linux
 
-# ICRA-RM-Sim2Real Tutorials
+http://www.ee.surrey.ac.uk/Teaching/Unix/
 
-![arch of the RMUS EP SIM2REAL system](./assets/arch-EP-sim2real.png)
+### Docker 容器
 
-The `RMUS SIM2REAL` system consists of the Server/Client two parts seperately, one is the server docker image to deploy the simulation environment and the other is the client docker image to deploy the user algorithm for the EP robot to connect the environment both for simulation and reality.
+什么是 Docker 
 
-Non-Beginners: If you're already familiar enough with Linux+ROS+Habitat or earlier versions and only want to explore the new ICRA-RM-Sim2Real playground, you can go through the details of installation guide [here](./docker_client/sim2real-install-guide.md). However, going through all basic Entry Level tutorials is still recommended for all users to get exposed to new features.
+安装 Docker 环境
 
-If you are new to Linux: You may find it helpful to first do a quick tutorial on common command line tools for linux. A good one is [here](http://www.ee.surrey.ac.uk/Teaching/Unix/).
+Docker容器
 
-Hardware requirement: NVIDA GPU 1080+ with driver 470+ in need to support the `Sim2Real` environment.
+Docker镜像
 
-Ubuntu `20.04` or later in need to support more convenient experience.
+Docker Registry
 
-<!-- # Core Sim2Real Tutorials -->
-## Entry Level
+### ROS
 
-- [Installing the system](./docker_client/sim2real-install-guide.md)
-- [Platform introduction](./tutorial-RMUS-EP.md#1-platform-introduction)
-- Software stack
-  - [Habitat](https://github.com/facebookresearch/habitat-sim)
-  - [ROS](http://wiki.ros.org/ROS/Tutorials)
-      <!-- - briefly introduction
-      - SLAM -->
-  - [ROS-X-Habitat](https://github.com/ericchen321/ros_x_habitat)
-  - [Getting Started with the RoboMaster SDK - EP](https://robomaster-dev.readthedocs.io/en/latest/python_sdk/beginner_ep.html)
-<!-- - Optional remote control -->
-   <!-- log -->
-   <!-- Judgement Score -->
-<!-- - etc -->
+http://wiki.ros.org/ROS/Tutorials#Core_ROS_Tutorials
 
-## Intermediate Level
+## 系统架构
 
-- Hands on the baseline
-  - System introduction
-    - [System installation](./docker_client/sim2real-install-guide.md)
-  - [Functional modules](./tutorial-RMUS-EP.md)
-    - [ROS interface](./tutorial-RMUS-EP.md#3-ros-interface)
-    - [Map based on cartographer](./tutorial-RMUS-EP.md#41-map-based-on-cartographer)
-      <!-- RTAB Navi -->
-    - [Lidar based navigation cartographer and move_base](./tutorial-RMUS-EP.md#42-lider-navigation-based-on-cartographer-and-move_base)
-    <!-- Digital CV -->
-    <!-- box grasp/put -->
-- the Judgement system
-  - local
-   <!-- blocks Nums in need -->
-   <!-- report cpu high -->
-   <!-- debug toolchain -->
-   <!--     log -->
-   <!--     rgb/depth log optional recording -->
-  - online
+<img src="assets/system-architecture.svg" alt="architecture"  />
 
-## Challenge overiew
+
+
+比赛系统由三部分组成：
+
+* 比赛平台（Frontend Platform）
+* 仿真运行环境（Simulation）
+* 真实运行环境（Real）
+
+
+
+
+
+Client/Server架构
+
+Habitat-Simulator+Habitat-Lab
+
+接口
+
+<img src="assets/arch-EP-sim2real.png" style="zoom:50%;" />
+
+
+## 比赛项目
 
 ![FPV-RMUS](./assets/FPV-RMUS.gif)
 
@@ -87,23 +76,31 @@ Teams are required to develop and debug their algorithms in a simulator and subm
 
 Compared to other RoboMaster University events, this challenge does not require teams to build physical robots, allowing participants to focus entirely on algorithm design.
 
+
+## 运行指南
+
+登录 Docker registry
+
+准备 Docker 环境
+
+仿真环境
+
+开发环境
+
+## ROS 接口
+
+以 ROS Topics 形式给出
+
+
+
 ## Other resource
 
 - The [ICRA2022 RoboMaster University Sim2Real Challenge (RMUS)](https://air.tsinghua.edu.cn/robomaster/sim2real_icra22.html)
   - [the RMUS rulebook](https://air.tsinghua.edu.cn/robomaster/RMUS2022_rules_manual.pdf)
   - [FAQ List](https://air.tsinghua.edu.cn/robomaster/FAQ_List.pdf) [CN](https://air.tsinghua.edu.cn/robomaster/FAQ_List_Chinese.pdf)
   - [the Vision Markers on the Cube](https://dl.djicdn.com/downloads/robomaster-s1/20190620/RoboMaster_S1_Vision_Markers_44pcs_15_15cm_updated.pdf)
-- Docker
-- welcome to submit Issues
-- http://wiki.ros.org/ROS/Tutorials#Core_ROS_Tutorials
 
-<!-- [中文版本](./README_CN.md) -->
-Related docker repository
-- https://hub.docker.com/repository/docker/rmus2022/
-
-<!-- [README of the sim2real agent](./docker_sim2real/README.md) -->
-
-# Reference
+## Reference
 
 1. [ROS-X-Habitat: Bridging the ROS Ecosystem with Embodied AI](https://arxiv.org/abs/2109.07703)
    - https://github.com/ericchen321/ros_x_habitat
