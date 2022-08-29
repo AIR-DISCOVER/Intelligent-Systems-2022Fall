@@ -1,7 +1,5 @@
 # Sim2Real 课程比赛指南
 
-[toc]
-
 <img src="./assets/RoboMasterEP.gif" alt="RoboMasterEP" style="zoom: 50%;" />
 
 The RoboMaster EP chassis
