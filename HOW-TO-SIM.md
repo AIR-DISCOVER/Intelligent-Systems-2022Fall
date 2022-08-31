@@ -2,6 +2,8 @@
 
 [toc]
 
+本节提供配置仿真环境并进行测试的说明。
+
 ## 1. 仿真环境准备
 
 ### 1.1 安装Docker环境
@@ -10,13 +12,7 @@ Docker是容器化技术的一种实现。容器形式的应用程序能够从�
 
 在本次比赛中，我们通过Docker容器的方式向参赛者提供比赛所用的仿真环境，该环境包含对比赛场地的模拟，参赛者的容器通过ROS Topics的方式与仿真环境交互。仿真测评阶段，将由评测服务器自动创建仿真环境容器与参赛者提交容器，并自动启动进行模拟过程进行评价。
 
-#### 1.1.1 安装Docker环境 - Windows系统
-
-==TODO==
-
-Docker Desktop
-
-#### 1.1.2 安装Docker环境 - Ubuntu 系统
+#### 1.1.1 安装Docker环境 - Ubuntu 系统
 
 创建文件 `install.sh`：
 
@@ -39,6 +35,15 @@ echo \
   $(lsb_release -cs) stable" | tee /etc/apt/sources.list.d/docker.list > /dev/null
 apt-get update
 apt-get install -y docker-ce docker-ce-cli containerd.io
+
+distribution=$(. /etc/os-release;echo $ID$VERSION_ID) \
+&& curl -fsSL https://nvidia.github.io/libnvidia-container/gpgkey |\
+gpg --dearmor -o /usr/share/keyrings/nvidia-container-toolkit-keyring.gpg \
+&& curl -s -L https://nvidia.github.io/libnvidia-container/$distribution/libnvidia-container.list |\
+sed 's#deb https://#deb [signed-by=/usr/share/keyrings/nvidia-container-toolkit-keyring.gpg] https://#g' |\
+tee /etc/apt/sources.list.d/nvidia-container-toolkit.list
+apt-get install -y nvidia-docker2
+systemctl restart docker
 ```
 
 执行以下命令：
@@ -61,7 +66,7 @@ docker ps
 CONTAINER ID    IMAGE    COMMAND    CREATED    STATUS    PORTS
 ```
 
-==TODO== Nvidia-docker2
+### 1.1.2 安装Docker环境 - Windows系统
 
 ### 1.2 拉取镜像
 
@@ -73,11 +78,18 @@ docker pull docker.discover-lab.com:55555/rmus-2022-fall/sim-headless:v3.0.1
 
 容器大小为11.23GB，拉取时间较长，请耐心等待。
 
-此外，启动仿真环境仍需要 `ros:noetic-ros-core-focal` 镜像；对仿真环境进行可视化仍需要 `docker.discover-lab.com:55555/rmus-2022-fall/ros-gui:v3.0.1` 镜像。通过以下命令拉取这两个镜像：
+此外：
+
+* 启动仿真环境需要 `ros:noetic-ros-core-focal` 镜像
+* 对仿真环境进行可视化需要 `docker.discover-lab.com:55555/rmus-2022-fall/ros-gui:v3.0.1` 镜像
+* 控制小车与仿真环境需要 `docker.discover-lab.com:55555/rmus-2022-fall/client:v3.0.1rc` 镜像
+
+通过以下命令分别拉取这三个镜像：
 
 ```shell
 docker pull ros:noetic-ros-core-focal
-docker pull docker.discover-lab.com:55555/rmus-2022-fall/sim-headless:v3.0.1
+docker pull docker.discover-lab.com:55555/rmus-2022-fall/ros-gui:v3.0.1
+docker pull docker.discover-lab.com:55555/rmus-2022-fall/client:v3.0.1rc
 ```
 
 ### 1.3 启动仿真环境
@@ -135,7 +147,7 @@ docker run -dit --rm \
     -v /dev/video4:/dev/video4 \
     -v /dev/video5:/dev/video5 \
     -v /tmp:/tmp \
-    ros-gui bash
+    docker pull docker.discover-lab.com:55555/rmus-2022-fall/ros-gui:v3.0.1 bash
 ```
 
 测试容器启动后，执行以下命令进行可视化：
@@ -152,15 +164,17 @@ docker exec -dit ros-gui bash -c \
 "source /opt/ros/noetic/setup.bash; rosrun image_view image_view image:=/camera/aligned_depth_to_color/image_raw"
 ```
 
-### 2.2 环境交互
+### 2.2 使用键盘控制小车移动
 
-==TODO==
+推荐先按照 2.1 节说明将仿真环境中的相机可视化，便于观察小车移动。
+
+通过以下命令在后台启动客户端：
 
 ```shell
-docker run -it --rm --gpus all --network net-1 --name cli\
+docker run -dit --rm --gpus all --network net-sim --name client \
 	--cpus=5.6 -m 8192M \
 	-v /dev:/dev -e DISPLAY=:2 -e QT_X11_NO_MITSHM=1 \
-    -e ROS_MASTER_URI=http://rosmaster:11311 \
+    -e ROS_MASTER_URI=http://ros-master:11311 \
 	-v /dev/bus/usb:/dev/bus/usb \
     -v /dev/video0:/dev/video0 \
     -v /dev/video1:/dev/video1 \
@@ -169,12 +183,24 @@ docker run -it --rm --gpus all --network net-1 --name cli\
     -v /dev/video4:/dev/video4 \
     -v /dev/video5:/dev/video5 \
     -v /tmp/.X11-unix:/tmp/.X11-unix \
-    cli_test $@
+    docker.discover-lab.com:55555/rmus-2022-fall/client:v3.0.1rc $@
 ```
 
+客户端启动后，执行以下命令启动键盘监听：
 
+```shell
+docker exec -dit ros-gui bash -c \
+"source /opt/ros/noetic/setup.bash; roslaunch ep_teleop keyboard.launch"
+```
 
-
+* 按 `i` ，`j` ，`,` ，`l` 分别控制小车前进、后退、旋转
+* 按 `I` ，`J` ，`<` ，`L` 控制小车水平方向移动
+* 按 `k` 停止小车移动
+* 按 `1` 抬起小车机械臂
+* 按 `2` 放下小车机械臂
+* 按 `3` 关闭抓爪
+* 按 `4` 打开抓爪
+* 按 `Ctrl + C` （Windows）/ `Control + C` （Mac）停止监听
 
 ## 3. 停止仿真环境
 
@@ -184,6 +210,7 @@ docker run -it --rm --gpus all --network net-1 --name cli\
 docker stop sim-server
 docker stop ros-gui
 docker stop ros-master
+docker stop client
 docker network rm net-sim
 ```
 
