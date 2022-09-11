@@ -1,0 +1,1 @@
+![architecture](assets/system-architecture.svg)

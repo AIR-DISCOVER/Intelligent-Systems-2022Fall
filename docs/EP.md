@@ -1,17 +1,3 @@
-# About RoboMaster EP
-
-* [NUC](#nuc)
-* [Sensors](#sensors)
-   * [Lidar](#lidar)
-   * [IMU](#imu)
-   * [RGB &amp; Depth Camera](#rgb--depth-camera)
-   * [Odometer](#odometer)
-* [Accurators](#accurators)
-* [ROS Interfaces](#ros-interfaces)
-   * [Sensor Topics](#sensor-topics)
-   * [Accurator Topics](#accurator-topics)
-   * [Other Topics](#other-topics)
-
 ![RoboMasterEP](assets/RoboMasterEP.gif)
 
 The [RoboMaster EP](https://www.dji.com/cn/robomaster-ep) is an autonomous vehicle platform equipped with a 4 axis palletizing robot arm and an encircling gripper for flexible gripping action, inspired from DJI's annual RoboMaster robotics competition. It provides Mecanum wheel omnidirectional movement, fast wireless data link system including realtime video stream, and open sdk for further development and programming.
@@ -52,7 +38,7 @@ The specification for the equipped sensors:
 
 ## Environment
 
-<img src="./assets/challenge-field.jpg" alt="challenge-field"  />
+![challenge-field](assets/challenge-field.jpg)
 
 The real environment are shown as above, along with the reference systems of the world and the EP.
 

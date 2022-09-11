@@ -5,7 +5,7 @@ pages:
     - master 
     - main
   script:
-    - pip install mkdocs-material
+    - pip install mkdocs-material mkdocs-add-number-plugin
     - mkdocs build --site-dir public
   artifacts:
     paths:

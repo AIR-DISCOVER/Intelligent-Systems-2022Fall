@@ -1,3 +1,42 @@
-site_name: My Docs
+site_name: 智能系统设计与实践
 theme:
   name: material
+  language: zh
+  features:
+    - navigation.instant
+    - navigation.tracking
+    - navigation.top
+    - navigation.sections
+
+markdown_extensions:
+  - pymdownx.arithmatex:
+      generic: true
+
+extra_javascript:
+  - javascripts/mathjax.js
+  - https://polyfill.io/v3/polyfill.min.js?features=es6
+  - https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js
+
+nav:
+  - 欢迎: index.md
+  - 课程概述: INTRO.md
+  - 实验介绍:
+    - 系统架构: ARCH.md
+    - 镜像平台与自动评测系统: REGISTRY.md
+    - 比赛项目: CONTEST.md
+  - 操作指南:
+    - 配置Docker运行时: HOW-TO-DOCKER.md
+    - 配置仿真环境: HOW-TO-SIM.md
+    - 配置仿真EP: HOW-TO-EP.md
+    - 推送镜像和拉取镜像: SUBMIT-DOCKER.md
+  - 参数与接口:
+    - Robomaster EP: EP.md
+  - FAQ: FAQ.md
+  - 更新说明: UPDATES.md
+
+plugins:
+  - add-number:
+      order: 2
+      excludes: 
+        - UPDATES.md
+        - index.md
