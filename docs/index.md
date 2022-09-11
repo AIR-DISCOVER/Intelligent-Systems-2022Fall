@@ -51,7 +51,6 @@ FAQ 列表请见[这里](FAQ.md)。
   * 如何对Linux系统中的文件进行操作？
   * 什么是环境变量？如何修改环境变量？
   * 如何通过SSH登录远程环境？
-
 * ROS 基础概念与操作：[教程](https://wiki.ros.org/ROS/Tutorials#Core_ROS_Tutorials)
   * 什么是ROS Topics？如何获取ROS Topics广播的内容？
   * 什么是ROS Nodes？
