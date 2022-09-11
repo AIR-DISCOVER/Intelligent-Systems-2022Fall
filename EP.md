@@ -26,56 +26,20 @@ An external computing platform is also prepared to communicate with EPs through 
 
 The specification of the equipped NUC:
 
-| Type | NUC11PAHI7           |
-| :----: | :--------------------: |
-| CPU  | i7-1165G7 (2.8GHz, 8 Cores) |
-| RAM  | 8GB                  |
-| SSD  | 256G                 |
+| Model      | CPU        | RAM     | SSD     |
+|  :--------------------: | :----------------------: | :----------------------: | :----------------------: |
+|  NUC11PAHI7 | i7-1165G7 (2.8GHz, 8 Cores) | 8GB | 256GB |
 
 ## Sensors
 
 The specification for the equipped sensors:
 
-### Lidar
-
-[SlamTech Rplidar A2](https://www.slamtec.com/cn/Lidar/A2)
-
-|Key|Value|
-|:-:|:-:|
-|Scan Rate|$10hz$|
-|Sample Rate|$16Khz$|
-|Distance Range|$[10m,25m]$ [TODO check]|
-|Mimimal Operating Range|$0.2m$|
-
-### IMU
-
-[HiPNUC Hi226 6-axis IMU/VRU](https://www.hipnuc.com/product_hi226.html)
-
-|                       Key                        |  Value   |
-| :----------------------------------------------: | :------: |
-|                    Frequency                     |  $30hz$  |
-|           Static Roll and Pitch Errors           |  $0.8°$  |
-|     Static Roll and Pitch Angles Error Bound     |  $2.5°$  |
-|             Bias Error of Gyroscope              | $<10°/h$ |
-| Heading Angle Error When Moving (in 6-axis mode) |  $<10°$  |
-
-### RGB & Depth Camera
-
-[Intel Realsense D435i](https://www.intelrealsense.com/zh-hans/depth-camera-d435i/)
-
-|    Key     |     Value      |
-| :--------: | :------------: |
-| Frequency  |     $30hz$     |
-| Resolution | $848\times480$ |
-|    FOV     | $69°\times42°$ |
-
-### Odometer
-
-[RoboMaster SDK](https://github.com/dji-sdk/robomaster-sdk)
-
-|    Key    | Value  |
-| :-------: | :----: |
-| Frequency | $10hz$ |
+|Type|Model|Parameters|
+|:-:|:-:|:-:|
+|Lidar|[SlamTech Rplidar A2](https://www.slamtec.com/cn/Lidar/A2)|Scan Rate: $10hz$<br />Sample Rate: $16Khz$<br />Distance Range: $[10m, 25m]$<br />Minimal Operating Range: $0.2m$|
+|IMU|[HiPNUC Hi226 6-axis IMU/VRU](https://www.hipnuc.com/product_hi226.html)|Frequency: $30hz$<br />Static Roll and Pitch Errors: $0.8°$<br />Static Roll and Pitch Angles Error Bound: $2.5°$<br />Bias Error of Gyroscope: $<10°/h$<br />Heading Angle Error When Moving (in 6-axis mode): $<10°$|
+|RGB & Depth Camera|[Intel Realsense D435i](https://www.intelrealsense.com/zh-hans/depth-camera-d435i/)|Frequency: $30hz$<br />Resolution: $848\times480$<br />FOV: $69°\times42°$|
+|Odometer|[RoboMaster SDK](https://github.com/dji-sdk/robomaster-sdk)|Frequency: $10hz$|
 
 ## Accurators
 
@@ -86,7 +50,79 @@ The specification for the equipped sensors:
 | arm end position control | while $0.09\leq x \leq 0.18$, should keep $y\ge 0.08$ <br>while $x>0.18$, should keep $y\ge -0.02$ |
 | gripper control          | $x=1$ close gripper <br>$x=0$ open gripper                   |
 
+## Environment
+
+<img src="./assets/challenge-field.jpg" alt="challenge-field"  />
+
+The real environment are shown as above, along with the reference systems of the world and the EP.
+
+The relative position of initial position of EP in the world reference is $(4.2, 0, 3.5)$.
+
 ## ROS Interfaces
+
+Interation with (simulated) EP is done by **ROS topics**.
+
+A complete list of subscribed/published rostopics are listed (`rostopic list -v`):
+
+```
+Published topics:
+ * /rosout_agg [rosgraph_msgs/Log] 1 publisher
+ * /rosout [rosgraph_msgs/Log] 7 publishers
+ * /image_view_rgb/parameter_descriptions [dynamic_reconfigure/ConfigDescription] 1 publisher
+ * /image_view_depth/parameter_updates [dynamic_reconfigure/Config] 1 publisher
+ * /image_view_rgb/parameter_updates [dynamic_reconfigure/Config] 1 publisher
+ * /image_view_depth/output [sensor_msgs/Image] 1 publisher
+ * /image_view_rgb/output [sensor_msgs/Image] 1 publisher
+ * /camera/color/image_raw [sensor_msgs/Image] 1 publisher
+ * /camera/color/camera_info [sensor_msgs/CameraInfo] 1 publisher
+ * /camera/aligned_depth_to_color/image_raw [sensor_msgs/Image] 1 publisher
+ * /camera/aligned_depth_to_color/camera_info [sensor_msgs/CameraInfo] 1 publisher
+ * /pointgoal_with_gps_compass [ros_x_habitat/PointGoalWithGPSCompass] 1 publisher
+ * /gps [ros_x_habitat/PointGoalWithGPSCompass] 1 publisher
+ * /imu/data_raw [sensor_msgs/Imu] 1 publisher
+ * /tf [tf2_msgs/TFMessage] 1 publisher
+ * /rplidar/scan [sensor_msgs/LaserScan] 1 publisher
+ * /ep/odom [nav_msgs/Odometry] 1 publisher
+ * /gripper_state [geometry_msgs/Point] 1 publisher
+
+Subscribed topics:
+ * /rosout [rosgraph_msgs/Log] 1 subscriber
+ * /cmd_vel [geometry_msgs/Twist] 1 subscriber
+ * /arm_gripper [geometry_msgs/Point] 1 subscriber
+ * /arm_position [geometry_msgs/Pose] 1 subscriber
+ * /cmd_position [geometry_msgs/Twist] 1 subscriber
+```
+
+Additional topics are used for debugging only:
+
+```
+Published topics:
+ * /image_view_depth/parameter_descriptions [dynamic_reconfigure/ConfigDescription] 1 publisher
+ * /image_view_third/parameter_descriptions [dynamic_reconfigure/ConfigDescription] 1 publisher
+ * /image_view_third/parameter_updates [dynamic_reconfigure/Config] 1 publisher
+ * /image_view_third/output [sensor_msgs/Image] 1 publisher
+ * /third_rgb [sensor_msgs/Image] 1 publisher
+ * /pose/cube_1 [geometry_msgs/Pose] 1 publisher
+ * /pose/cube_2 [geometry_msgs/Pose] 1 publisher
+ * /pose/cube_3 [geometry_msgs/Pose] 1 publisher
+ * /pose/cube_4 [geometry_msgs/Pose] 1 publisher
+ * /pose/cube_5 [geometry_msgs/Pose] 1 publisher
+ * /position/target_1 [geometry_msgs/Point] 1 publisher
+ * /position/target_2 [geometry_msgs/Point] 1 publisher
+ * /position/target_3 [geometry_msgs/Point] 1 publisher
+ * /pose/ep_world [geometry_msgs/Pose] 1 publisher
+ * /judgement/exchange_markers [std_msgs/String] 1 publisher
+ * /judgement/markers_time [std_msgs/String] 1 publisher
+
+Subscribed topics:
+ * /camera/aligned_depth_to_color/image_raw [sensor_msgs/Image] 1 subscriber
+ * /camera/color/image_raw [sensor_msgs/Image] 1 subscriber
+ * /third_rgb [sensor_msgs/Image] 1 subscriber
+ * /pointgoal_with_gps_compass [ros_x_habitat/PointGoalWithGPSCompass] 1 subscriber
+ * /gps/goal [move_base_msgs/MoveBaseActionGoal] 1 subscriber -->
+```
+
+
 
 ### Sensor Topics
 

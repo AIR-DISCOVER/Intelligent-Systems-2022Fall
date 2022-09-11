@@ -212,11 +212,10 @@ Published topics:
 Subscribed topics:
  * /camera/aligned_depth_to_color/image_raw [sensor_msgs/Image] 1 subscriber
  * /camera/color/image_raw [sensor_msgs/Image] 1 subscriber
-```
-
- <!-- * /third_rgb [sensor_msgs/Image] 1 subscriber
+ * /third_rgb [sensor_msgs/Image] 1 subscriber
  * /pointgoal_with_gps_compass [ros_x_habitat/PointGoalWithGPSCompass] 1 subscriber
  * /gps/goal [move_base_msgs/MoveBaseActionGoal] 1 subscriber -->
+```
 
 ## 2.1 Sensor topics
 
