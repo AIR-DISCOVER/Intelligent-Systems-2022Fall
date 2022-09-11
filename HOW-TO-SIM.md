@@ -76,7 +76,7 @@ CONTAINER ID    IMAGE    COMMAND    CREATED    STATUS    PORTS
 docker pull docker.discover-lab.com:55555/rmus-2022-fall/sim-headless:v3.0.1
 ```
 
-容器大小为11.23GB，拉取时间较长，请耐心等待。
+容器大小为11.23GB，拉取时间较长（良好网络环境下需20分钟），请耐心等待。
 
 此外：
 
