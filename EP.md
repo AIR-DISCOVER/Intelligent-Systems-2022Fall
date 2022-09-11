@@ -140,8 +140,8 @@ Subscribed topics:
 
 |Name|Type|Description|
 |:-|:-|:-|
-|`/cmd_vel`|`geometry_msgs/Twist`|Velocity command for the EP chassis.<br />Recommended ranges:<br />$$0.1m/s\leq\|v_x\|\leq0.35m/s$$<br />$$0.1m/s\leq\|v_y\|\leq0.35m/s$$<br />$$0.1rad/s\leq\|v_{th}\|\leq0.5rad/s$$|
-|`/cmd_position`|`geometry_msgs/Twist`|Position command for the EP chassis.<br />Recommended ranges:<br />$$0.1m\leq\|x\|$$<br />$$0.1m\leq\|y\|$$<br />$$0.1rad\leq\|theta\|$$|
+|`/cmd_vel`|`geometry_msgs/Twist`|Velocity command for the EP chassis.<br />Recommended ranges:<br />$0.1m/s\leq\|v_x\|\leq0.35m/s$<br />$0.1m/s\leq\|v_y\|\leq0.35m/s$<br/>$0.1rad/s\leq\|v_{th}\|\leq0.5rad/s$|
+|`/cmd_position`|`geometry_msgs/Twist`|Position command for the EP chassis.<br />Recommended ranges:<br />$0.1m\leq\|x\|$<br/>$0.1m\leq\|y\|$<br/>$0.1rad\leq\|theta\|$|
 |`/arm_position`|`geometry_msgs/Pose`|Position control command for the Robotic arm.<br />Available ranges:<br/>$0.09\leq x \leq 0.18$:  $y\ge 0.08$<br />$x>0.18$:  $y\ge -0.02$|
 |`/arm_gripper`|`geometry_msgs/Point`|The commands for gripper.<br />Close: $x=1$<br />Open: $x=0$|
 
