@@ -6,6 +6,7 @@ theme:
     - navigation.instant
     - navigation.tracking
     - navigation.top
+    - navigation.expand
     - navigation.sections
 
 markdown_extensions:
@@ -23,12 +24,14 @@ nav:
   - 实验介绍:
     - 系统架构: ARCH.md
     - 镜像平台与自动评测系统: REGISTRY.md
-    - 比赛项目: CONTEST.md
+    - 比赛项目:
+      - RMUS 2022: CONTEST.md
+      - 2022秋季课程: CONTEST-2022FALL.md
   - 操作指南:
     - 配置Docker运行时: HOW-TO-DOCKER.md
+    - 推送镜像和拉取镜像: HOW-TO-SUBMIT.md
     - 配置仿真环境: HOW-TO-SIM.md
     - 配置仿真EP: HOW-TO-EP.md
-    - 推送镜像和拉取镜像: SUBMIT-DOCKER.md
   - 参数与接口:
     - Robomaster EP: EP.md
   - FAQ: FAQ.md
