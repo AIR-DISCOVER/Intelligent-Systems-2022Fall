@@ -1,6 +1,10 @@
 # The ROS topics and navigation system
 <!-- # EP Carto Navigation Guide -->
 
+[toc]
+
+
+
 # 1. Platform introduction
 
 ## 1.1 RoboMaster EP
@@ -61,9 +65,9 @@ Odometer | [RoboMaster SDK](https://github.com/dji-sdk/robomaster-sdk) | 10 | -
 - Minimum Operating ranging:    0.2m
 
 ### 1.2.2 IMU
-​
+
 ### 1.2.3 Camera
-​
+
 [Intel Realsense D435i](https://www.intelrealsense.com/depth-camera-d435i/)
 
 ### 1.2.4 Main Controller from DJI (odometer) -->
@@ -135,15 +139,15 @@ Coordinate system | Description | Origin according to `/base_link` (m)
 
 `/base_link`
 
-​Robot center coordinate system, located at the center point of the 4 Mecanum wheel.
+Robot center coordinate system, located at the center point of the 4 Mecanum wheel.
 
 `/imu_link`
 
-​IMU coordinate system, the same as `base_link`.
+IMU coordinate system, the same as `base_link`.
 
 `/laser_link`
 
-​2D LiDAR coordinate system, located at the centrer front of the vehicle.
+2D LiDAR coordinate system, located at the centrer front of the vehicle.
 
 # 2. ROS interface
 
@@ -566,10 +570,10 @@ Contains the simulation environment coordinate system `world`, the map coordinat
 
 <!-- ## 4.1 launch文件中涉及环境变量的部分 -->
 ## 5.1 Environment variables related to `ENV_ROBOT_MODE` in launch files
-​
+
 <!-- 选手请勿更改此部分，镜像中已针对仿真和现实做出了区别处理。 -->
 Players **should not** change this part, the docker image has made a distinction between simulation and reality.
 
 ## 5.2 Remap for the right topics
-​
+
 In order to make the Topic express its meaning more clearly, while avoiding the conflict of the same type of data from different sensors, topics such as `/rplidar/scan`, `/ep/odom` are used instead of the common `/scan`, `/odom` `, please use in the launch file tags to remap topics.

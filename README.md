@@ -8,9 +8,37 @@
 
 FAQ 列表请见[这里](FAQ.md)。
 
+## 目录
+
+* [智能系统设计与实践 2022秋](#智能系统设计与实践-2022秋)
+   * [目录](#目录)
+   * [课程简介](#课程简介)
+      * [课程安排](#课程安排)
+   * [课程实验](#课程实验)
+      * [实验框架](#实验框架)
+      * [操作说明](#操作说明)
+      * [比赛项目](#比赛项目)
+   * [其他资源](#其他资源)
+
 ## 课程简介
 
-[TODO] 课程简介
+[TODO] 
+
+本课程从智能系统的各单元模块介绍出发，配合真实系统设计与实践环节，全方位培养学生对智能系统的理解与认识。
+
+### 课程安排
+
+本课程总计32课时。
+
+|课程|形式|内容|课程|形式|内容|
+|:-:|:-:|:-:|:-:|:-:|:-:|
+|1|授课|课程基本信息|13-14|实验|竞赛详细介绍与参考案例|
+|2|授课|智能系统组成  智能系统发展与回顾|15-18|实验|机械装机、3D打印、抓取机构实验|
+|3-4|授课|系统设计流程与工具|19-22|实验|仿真软件实验|
+|5-6|授课|移动底盘、机械臂操作|23-26|实验|现实环境测试、仿真到现实迁移|
+|7-8|授课|相机标定与立体视觉、目标检测与识别|27-30|竞赛|初赛、决赛与颁奖|
+|9-10|授课|SLAM与多传感器融合|31-32|展示|参赛队总结汇报|
+|11-12|授课|轨迹规划与控制||||
 
 > 我能收获什么？
 
@@ -36,13 +64,13 @@ FAQ 列表请见[这里](FAQ.md)。
 
 ## 课程实验
 
-<img src="assets/arch-EP-sim2real.png" style="zoom:50%;" />
-
-<img src="assets/system-architecture.svg" alt="architecture"  />
+<img src="assets/system-architecture.svg" alt="architecture" style="display: block; zoom: 50%;" />
 
 ### 实验框架
 
 [TODO]
+
+
 
 ### 操作说明
 
@@ -77,15 +105,11 @@ FAQ 列表请见[这里](FAQ.md)。
 此处提供一些额外的资源供感兴趣的同学参考。注意，不阅读此节内容**不影响**课程学习与实验。
 
 * ICRA2022 RoboMaster University Sim2Real Challenge 相关材料
-
   * [首页](https://air.tsinghua.edu.cn/robomaster/sim2real_icra22.html)
-
   * [规则手册](https://air.tsinghua.edu.cn/robomaster/RMUS2022_rules_manual.pdf)
-
   * [方块贴纸图样](https://dl.djicdn.com/downloads/robomaster-s1/20190620/RoboMaster_S1_Vision_Markers_44pcs_15_15cm_updated.pdf)
 
 * AI Habitat 教程
-
   * [How to Train Your [Dragon] Embodied Agent - ECCV 2020 Tutorial](https://aihabitat.org/tutorial/2020/)
 
 * ROS-X-Habitat: 连接ROS与AI Habitat仿真环境的接口
