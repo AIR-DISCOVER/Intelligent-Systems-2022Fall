@@ -8,17 +8,15 @@
 
 FAQ 列表请见[这里](FAQ.md)。
 
-## 目录
+---
 
-* [智能系统设计与实践 2022秋](#智能系统设计与实践-2022秋)
-   * [目录](#目录)
-   * [课程简介](#课程简介)
-      * [课程安排](#课程安排)
-   * [课程实验](#课程实验)
-      * [实验框架](#实验框架)
-      * [操作说明](#操作说明)
-      * [比赛项目](#比赛项目)
-   * [其他资源](#其他资源)
+* [课程简介](#课程简介)
+   * [课程安排](#课程安排)
+* [课程实验](#课程实验)
+   * [实验框架](#实验框架)
+   * [操作说明](#操作说明)
+   * [比赛项目](#比赛项目)
+* [其他资源](#其他资源)
 
 ## 课程简介
 
@@ -90,8 +88,6 @@ FAQ 列表请见[这里](FAQ.md)。
 > The match lasts for five minutes with a sim2real-based format, where robots rearrange minerals based on the information shown on the exchange tags to earn points. Participants will be ranked according to their total points won. 
 >
 > ![pick-ore](./assets/pick-ore.gif)
->
-> ![place-ore](./assets/pick-ore.gif)
 >
 > The objective of the challenge is to assess how well a program completed on a simulation platform can be operated in real application environments. 
 >

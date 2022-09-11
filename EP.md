@@ -1,4 +1,16 @@
-# RoboMaster EP 介绍
+# About RoboMaster EP
+
+* [NUC](#nuc)
+* [Sensors](#sensors)
+   * [Lidar](#lidar)
+   * [IMU](#imu)
+   * [RGB &amp; Depth Camera](#rgb--depth-camera)
+   * [Odometer](#odometer)
+* [Accurators](#accurators)
+* [ROS Interfaces](#ros-interfaces)
+   * [Sensor Topics](#sensor-topics)
+   * [Accurator Topics](#accurator-topics)
+   * [Other Topics](#other-topics)
 
 ![RoboMasterEP](./assets/RoboMasterEP.gif)
 
@@ -8,18 +20,7 @@ In order to match the theme of the course, we equip the RoboMaster EP with an ex
 
 An external computing platform is also prepared to communicate with EPs through RoboMaster EP SDK. This platform is dedicated to run real applications in both simulated and real environments.
 
-* [RoboMaster EP 介绍](#robomaster-ep-介绍)
-   * [NUC](#nuc)
-   * [Sensors](#sensors)
-      * [Lidar](#lidar)
-      * [IMU](#imu)
-      * [RGB &amp; Depth Camera](#rgb--depth-camera)
-      * [Odometer](#odometer)
-   * [Accurators](#accurators)
-   * [ROS Interfaces](#ros-interfaces)
-      * [Sensor Topics](#sensor-topics)
-      * [Accurator Topics](#accurator-topics)
-      * [Other Topics](#other-topics)
+![group](assets/group.png)
 
 ## NUC
 
