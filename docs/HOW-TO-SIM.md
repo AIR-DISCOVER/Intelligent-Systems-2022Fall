@@ -47,6 +47,8 @@ docker run -it --rm \
 	-e ROS_MASTER_URI=http://ros-master:11311 \
 	-e MAGNUM_LOG=verbose \
 	-e MAGNUM_GPU_VALIDATION=on \
+    -e DISPLAY=$DISPLAY \
+    -e QT_X11_NO_MITSHM=1 \
 	-v /dev/bus/usb:/dev/bus/usb \
     -v /dev/video0:/dev/video0 \
     -v /dev/video1:/dev/video1 \
