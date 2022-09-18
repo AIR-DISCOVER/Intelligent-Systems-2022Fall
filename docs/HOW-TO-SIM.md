@@ -41,7 +41,7 @@ docker run -dit --rm --name ros-master --network net-sim ros:noetic-ros-core-foc
 ### 启动仿真环境
 
 ```shell
-docker run -it --rm --gpus all \
+docker run -it --rm \
 	--name sim_server \
     --network net-sim \
 	-e ROS_MASTER_URI=http://ros-master:11311 \
