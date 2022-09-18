@@ -37,14 +37,14 @@ docker run -dit --rm --network net-sim --name client \
 客户端启动后，执行以下命令启动键盘监听：
 
 ```shell
-docker exec -it ros-gui /opt/ros/noetic/env.sh roslaunch ep_teleop keyboard.launch
+docker exec -it client /opt/ros/noetic/env.sh /opt/ep_ws/devel/env.sh roslaunch ep_teleop keyboard.launch
 ```
 
 * 按 `i` ，`j` ，`,` ，`l` 分别控制小车前进、后退、旋转
 * 按 `I` ，`J` ，`<` ，`L` 控制小车水平方向移动
 * 按 `k` 停止小车移动
-* 按 `1` 抬起小车机械臂
-* 按 `2` 放下小车机械臂
+* 按 `1` 放下小车机械臂
+* 按 `2` 抬起小车机械臂
 * 按 `3` 关闭抓爪
 * 按 `4` 打开抓爪
 * 按 `Ctrl + C` （Windows）/ `Control + C` （Mac）停止监听
