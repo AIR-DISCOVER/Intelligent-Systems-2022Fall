@@ -7,7 +7,7 @@
 课程提供性能欠佳但功能正常的EP客户端镜像。通过以下命令拉取：
 
 ```shell
-docker pull docker.discover-lab.com:55555/rmus-2022-fall/client:v3.0.2rc
+docker pull docker.discover-lab.com:55555/rmus-2022-fall/client-cpu
 ```
 
 ## 启动仿真EP
@@ -29,7 +29,7 @@ docker run -dit --rm --gpus all --network net-sim --name client \
     -v /dev/video4:/dev/video4 \
     -v /dev/video5:/dev/video5 \
     -v /tmp/.X11-unix:/tmp/.X11-unix \
-    docker.discover-lab.com:55555/rmus-2022-fall/client:v3.0.2rc $@
+    docker.discover-lab.com:55555/rmus-2022-fall/client-cpu bash
 ```
 
 ## 使用键盘控制小车移动
@@ -37,8 +37,7 @@ docker run -dit --rm --gpus all --network net-sim --name client \
 客户端启动后，执行以下命令启动键盘监听：
 
 ```shell
-docker exec -dit ros-gui bash -c \
-"source /opt/ros/noetic/setup.bash; roslaunch ep_teleop keyboard.launch"
+docker exec -dit ros-gui /opt/ros/noetic/env.sh roslaunch ep_teleop keyboard.launch
 ```
 
 * 按 `i` ，`j` ，`,` ，`l` 分别控制小车前进、后退、旋转

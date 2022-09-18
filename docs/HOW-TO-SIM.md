@@ -7,7 +7,7 @@
 比赛提供的仿真环境容器是公开的。参赛者可以通过以下命令将该容器从云端拉取到本地：
 
 ```shell
-docker pull docker.discover-lab.com:55555/rmus-2022-fall/sim-headless:v3.0.1
+docker pull docker.discover-lab.com:55555/rmus-2022-fall/sim-headless-cpu
 ```
 
 容器大小为11.23GB，拉取时间较长（良好网络环境下需20分钟），请耐心等待。
@@ -21,7 +21,7 @@ docker pull docker.discover-lab.com:55555/rmus-2022-fall/sim-headless:v3.0.1
 
 ```shell
 docker pull ros:noetic-ros-core-focal
-docker pull docker.discover-lab.com:55555/rmus-2022-fall/ros-gui:v3.0.1
+docker pull docker.discover-lab.com:55555/rmus-2022-fall/ros-gui
 ```
 
 ## 启动仿真环境
@@ -54,7 +54,7 @@ docker run -it --rm --gpus all \
     -v /dev/video3:/dev/video3 \
     -v /dev/video4:/dev/video4 \
     -v /dev/video5:/dev/video5 \
-	docker.discover-lab.com:55555/rmus-2022-fall/sim-headless:v3.0.1
+	docker.discover-lab.com:55555/rmus-2022-fall/sim-headless-cpu
 ```
 
 ## 仿真环境测试
@@ -79,21 +79,18 @@ docker run -dit --rm \
     -v /dev/video4:/dev/video4 \
     -v /dev/video5:/dev/video5 \
     -v /tmp:/tmp \
-    docker pull docker.discover-lab.com:55555/rmus-2022-fall/ros-gui:v3.0.1 bash
+    docker.discover-lab.com:55555/rmus-2022-fall/ros-gui bash
 ```
 
 测试容器启动后，执行以下命令进行可视化：
 
 ```shell
 # 第三人称视角小车全貌
-docker exec -dit ros-gui bash -c \
-"source /opt/ros/noetic/setup.bash; rosrun image_view image_view image:=/third_rgb"
+docker exec -dit ros-gui /opt/ros/noetic/env.sh rosrun image_view image_view image:=/third_rgb
 # 小车RGB相机输出
-docker exec -dit ros-gui bash -c \
-"source /opt/ros/noetic/setup.bash; rosrun image_view image_view image:=/camera/color/image_raw"
+docker exec -dit ros-gui /opt/ros/noetic/env.sh rosrun image_view image_view image:=/camera/color/image_raw
 # 小车深度相机输出
-docker exec -dit ros-gui bash -c \
-"source /opt/ros/noetic/setup.bash; rosrun image_view image_view image:=/camera/aligned_depth_to_color/image_raw"
+docker exec -dit ros-gui /opt/ros/noetic/env.sh rosrun image_view image_view image:=/camera/aligned_depth_to_color/image_raw
 ```
 
 ## 停止仿真环境
