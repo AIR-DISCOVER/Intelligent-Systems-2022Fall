@@ -17,7 +17,7 @@ docker pull docker.discover-lab.com:55555/rmus-2022-fall/client-cpu
 通过以下命令在后台启动客户端：
 
 ```shell
-docker run -dit --rm --gpus all --network net-sim --name client \
+docker run -dit --rm --network net-sim --name client \
 	--cpus=5.6 -m 8192M \
 	-v /dev:/dev -e DISPLAY=:2 -e QT_X11_NO_MITSHM=1 \
     -e ROS_MASTER_URI=http://ros-master:11311 \
@@ -37,7 +37,7 @@ docker run -dit --rm --gpus all --network net-sim --name client \
 客户端启动后，执行以下命令启动键盘监听：
 
 ```shell
-docker exec -dit ros-gui /opt/ros/noetic/env.sh roslaunch ep_teleop keyboard.launch
+docker exec -it ros-gui /opt/ros/noetic/env.sh roslaunch ep_teleop keyboard.launch
 ```
 
 * 按 `i` ，`j` ，`,` ，`l` 分别控制小车前进、后退、旋转
