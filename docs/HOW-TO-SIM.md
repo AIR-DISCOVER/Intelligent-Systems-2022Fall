@@ -45,7 +45,7 @@ xhost +
 docker run -it --rm \
 	--name sim-server \
     --network net-sim \
-	-e ROS_MASTER_URI=http://ro7s-master:11311 \
+	-e ROS_MASTER_URI=http://ros-master:11311 \
 	-e MAGNUM_LOG=verbose \
 	-e MAGNUM_GPU_VALIDATION=on \
     -e DISPLAY=$DISPLAY \

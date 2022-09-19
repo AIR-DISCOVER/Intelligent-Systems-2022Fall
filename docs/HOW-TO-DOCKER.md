@@ -1,5 +1,14 @@
 # 配置Docker运行环境
 
+## 安装Docker环境 - Windows系统
+
+Window环境下，需要先安装虚拟机：
+
+1. [下载 VirtualBox](https://cloud.tsinghua.edu.cn/f/80c66d74aee749b69be4/)并安装
+2. [下载 Ubuntu 20.04 虚拟机](https://cloud.tsinghua.edu.cn/f/1a0b5af2cc574eae89e2/)
+   * 虚拟机用户名为`ubuntu`，密码为`ubuntu`
+3. 点击
+
 ## 安装Docker环境 - Ubuntu 系统
 
 创建文件 `install.sh`：
@@ -47,4 +56,3 @@ docker ps
 CONTAINER ID    IMAGE    COMMAND    CREATED    STATUS    PORTS
 ```
 
-## 安装Docker环境 - Windows系统
