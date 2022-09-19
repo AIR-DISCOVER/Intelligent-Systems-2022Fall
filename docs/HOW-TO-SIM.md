@@ -41,6 +41,7 @@ docker run -dit --rm --name ros-master --network net-sim ros:noetic-ros-core-foc
 ### 启动仿真环境
 
 ```shell
+xhost +
 docker run -it --rm \
 	--name sim_server \
     --network net-sim \
