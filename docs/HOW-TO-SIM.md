@@ -15,7 +15,7 @@ docker pull docker.discover-lab.com:55555/rmus-2022-fall/sim-headless-cpu
 此外：
 
 * 启动仿真环境需要 `ros:noetic-ros-core-focal` 镜像
-* 对仿真环境进行可视化需要 `docker.discover-lab.com:55555/rmus-2022-fall/ros-gui:v3.0.1` 镜像
+* 对仿真环境进行可视化需要 `docker.discover-lab.com:55555/rmus-2022-fall/ros-gui` 镜像
 
 通过以下命令分别拉取这两个镜像：
 
@@ -43,14 +43,15 @@ docker run -dit --rm --name ros-master --network net-sim ros:noetic-ros-core-foc
 ```shell
 xhost +
 docker run -it --rm \
-	--name sim_server \
+	--name sim-server \
     --network net-sim \
-	-e ROS_MASTER_URI=http://ros-master:11311 \
+	-e ROS_MASTER_URI=http://ro7s-master:11311 \
 	-e MAGNUM_LOG=verbose \
 	-e MAGNUM_GPU_VALIDATION=on \
     -e DISPLAY=$DISPLAY \
     -e QT_X11_NO_MITSHM=1 \
     -e NO_AT_BRIDGE=1 \
+    -e LIBGL_ALWAYS_SOFTWARE=1 \
     -v /tmp/.X11-unix:/tmp/.X11-unix \
 	-v /dev/bus/usb:/dev/bus/usb \
     -v /dev/video0:/dev/video0 \
@@ -106,7 +107,6 @@ docker exec -dit ros-gui /opt/ros/noetic/env.sh rosrun image_view image_view ima
 docker stop sim-server
 docker stop ros-gui
 docker stop ros-master
-docker stop client
 docker network rm net-sim
 ```
 

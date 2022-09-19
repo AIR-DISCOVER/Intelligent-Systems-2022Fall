@@ -19,7 +19,7 @@ docker pull docker.discover-lab.com:55555/rmus-2022-fall/client-cpu
 ```shell
 docker run -dit --rm --network net-sim --name client \
 	--cpus=5.6 -m 8192M \
-	-v /dev:/dev -e DISPLAY=:2 -e QT_X11_NO_MITSHM=1 \
+	-v /dev:/dev -e DISPLAY=$DISPLAY -e QT_X11_NO_MITSHM=1 \
     -e ROS_MASTER_URI=http://ros-master:11311 \
 	-v /dev/bus/usb:/dev/bus/usb \
     -v /dev/video0:/dev/video0 \
