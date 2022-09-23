@@ -28,9 +28,11 @@ nav:
       - RMUS 2022: CONTEST.md
       - 2022秋季课程: CONTEST-2022FALL.md
   - 操作指南:
-    - 配置Docker运行时: HOW-TO-DOCKER.md
-    - 配置仿真环境: HOW-TO-SIM.md
-    - 配置仿真EP: HOW-TO-EP.md
+    - 准备Ubuntu虚拟机: how-to/vm.md
+    - 安装Docker: how-to/install-docker.md
+    - 获取Docker镜像: how-to/prepare-images.md
+    - 启动仿真环境: how-to/start-sim-env.md
+    - 启动仿真EP: how-to/start-sim-ep.md
   - 参数与接口:
     - Robomaster EP: EP.md
   - FAQ: FAQ.md
