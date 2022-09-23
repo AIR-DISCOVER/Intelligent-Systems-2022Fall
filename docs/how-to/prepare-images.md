@@ -74,7 +74,7 @@ docker load < ros-gui.tar
 
 ### 获取EP小车仿真镜像
 
-[点此下载]()（正在上传）后重命名为 `client.tar`，然后导入 Linux 环境的目录下，在该目录下执行：
+[点此下载](https://cloud.tianbeiwen.com:8000/f/9d8e4658db034a10b6be/)（6.4GB）后重命名为 `client.tar`，然后导入 Linux 环境的目录下，在该目录下执行：
 
 ```shell
 docker load < client.tar
@@ -84,7 +84,7 @@ docker load < client.tar
 
 ### 获取仿真环境镜像
 
-[点此下载]()（正在上传）CPU版本镜像，或[点此下载]()（正在上传）GPU版本镜像。运行GPU版本需要**原生Linux环境**并按照[上一节](./install-docker.md#3-dockergpu)**安装Docker的GPU扩展**。
+[点此下载]()（正在上传）CPU版本镜像，或[点此下载](https://cloud.tianbeiwen.com:8000/f/5ff72303ea1046cd9fff/)（24.9GB）GPU版本镜像。运行GPU版本需要**原生Linux环境**并按照[上一节](./install-docker.md#3-dockergpu)**安装Docker的GPU扩展**。
 
 将镜像文件重命名为 `sim-headless.tar`，然后导入 Linux 环境的目录下，在该目录下执行：
 
