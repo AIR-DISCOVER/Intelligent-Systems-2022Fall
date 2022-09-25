@@ -1,11 +1,8 @@
-# 准备Ubuntu虚拟机
+# Windows系统下准备环境：虚拟机方案
 
-这一节讲述如何在Windows环境下准备Ubuntu虚拟机。
+这一节讲述如何在Windows环境下准备Ubuntu虚拟机，以及虚拟机中的Docker环境。
 
-请使用Windows系统的同学依照此节内容配置，使用Linux系统（Ubuntu）的同学请跳过本节进入[下一节](./install-docker.md)安装Docker。
-
----
-
+## 安装虚拟机
 
 Window环境下，需要先安装虚拟机：
 
@@ -25,3 +22,62 @@ Window环境下，需要先安装虚拟机：
        * 进入系统后，可以单击右上角 - Settings - Displays - Resolution 修改屏幕大小
        ![assets/6.jpg](../assets/6.jpg)
 8. 按照下一节准备Ubuntu虚拟机中的Docker环境
+
+## 安装Docker环境
+
+### 换源加快安装速度
+
+执行以下命令换源，后续安装过程会更快：
+
+```
+sudo sed -i "s@http://.*archive.ubuntu.com@https://mirrors.tuna.tsinghua.edu.cn@g" /etc/apt/sources.list
+sudo sed -i "s@http://.*security.ubuntu.com@https://mirrors.tuna.tsinghua.edu.cn@g" /etc/apt/sources.list
+```
+
+### 准备安装脚本
+
+点击左下角菜单，直接输入`gedit`，点击打开文本编辑器，复制并粘贴以下内容：
+
+```shell
+#!/bin/bash
+set -x 
+set -e
+
+apt-get update
+
+apt-get -y install \
+    ca-certificates \
+    curl \
+    gnupg \
+    lsb-release
+
+curl -fsSL https://download.docker.com/linux/ubuntu/gpg | gpg --dearmor -o /usr/share/keyrings/docker-archive-keyring.gpg
+echo \
+  "deb [arch=$(dpkg --print-architecture) signed-by=/usr/share/keyrings/docker-archive-keyring.gpg] https://download.docker.com/linux/ubuntu \
+  $(lsb_release -cs) stable" | tee /etc/apt/sources.list.d/docker.list > /dev/null
+apt-get update
+apt-get install -y docker-ce docker-ce-cli containerd.io
+
+systemctl restart docker
+```
+
+点击“Save”或“保存”，将文件命名为`install.sh`。
+
+然后点击左下角菜单，输入`teminal`，点击打开命令行，输入并执行以下命令：
+
+```shell
+sudo bash install.sh
+sudo usermod -aG docker $USER
+```
+
+执行完成后，重启虚拟机即可使用 Docker 容器。执行以下命令检验已经成功安装：
+
+```shell
+docker ps
+```
+
+正确的运行结果应为
+
+```
+CONTAINER ID    IMAGE    COMMAND    CREATED    STATUS    PORTS
+```

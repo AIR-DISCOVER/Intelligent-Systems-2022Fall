@@ -104,6 +104,8 @@ docker exec -dit ros-gui /opt/ros/noetic/env.sh rosrun image_view image_view ima
 
 ![depth](../assets/depth.png)
 
+完成可视化后，[下一步](./start-sim-ep.md)可以启动仿真EP并使用键盘控制小车移动。
+
 ## 停止仿真环境
 
 停止创建的容器即可。**注意，此处容器在停止后将会立即删除，任何对容器的修改将不会被保存。**

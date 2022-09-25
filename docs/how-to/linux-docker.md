@@ -1,12 +1,10 @@
-# 配置Docker运行环境
+# Linux系统下准备环境
 
-本节描述如何在Ubuntu系统下安装Docker，如果运行Windows系统且尚未配置虚拟机，请依照[此节]()安装并运行虚拟机，在虚拟机内部执行以下步骤。
-
-如果使用其他Linux发行版本，请联系助教获取帮助。
+本节描述如何在Ubuntu系统下安装Docker，如果使用其他Linux发行版，请联系助教获取帮助。
 
 ## 安装Docker
 
-在命令行输入`gedit`打开文本编辑器，复制并粘贴以下内容：
+打开命令行，在命令行输入`gedit`打开文本编辑器，复制并粘贴以下内容：
 
 ```shell
 #!/bin/bash
@@ -52,7 +50,7 @@ CONTAINER ID    IMAGE    COMMAND    CREATED    STATUS    PORTS
 
 ## 安装Docker的GPU扩展
 
-如果你的电脑**运行Linux系统**且**包含NVIDIA显卡**，可以执行以下命令安装Docker的GPU扩展：
+如果你的电脑**包含NVIDIA显卡**，可以执行以下命令安装Docker的GPU扩展：
 
 ```shell
 distribution=$(. /etc/os-release;echo $ID$VERSION_ID) \

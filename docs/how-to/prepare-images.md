@@ -1,6 +1,6 @@
 # 获得Docker镜像
 
-这一步需要完成 Docker 安装。如果尚没有完成安装，请依照[上一节](./install-docker.md)说明安装Docker。
+这一步需要完成 Docker 安装。如果尚没有完成安装，请依照左侧“准备环境”准备相应环境并安装Docker。
 
 我们提供两种途径获取课程所需要的Docker镜像：**网络拉取**或**文件导入**，请按照其中一种途径完成即可。
 
@@ -46,7 +46,7 @@ docker pull docker.discover-lab.com:55555/rmus-2022-fall/sim-headless-cpu
 docker pull docker.discover-lab.com:55555/rmus-2022-fall/sim-headless-cpu
 ```
 
-运行GPU版本镜像需要**原生Linux环境**并按照[上一节](./install-docker.md#3-dockergpu)**安装Docker的GPU扩展**。
+运行GPU版本镜像需要**Linux系统**或**Windows系统的WSL**方式准备环境，并完成**安装Docker的GPU扩展**。
 
 ## 通过文件导入
 
@@ -84,7 +84,9 @@ docker load < client.tar
 
 ### 获取仿真环境镜像
 
-[点此下载](https://cloud.tianbeiwen.com:8000/f/8fe64d8dca9143c59dcd/)（15.9GB）CPU版本镜像，或[点此下载](https://cloud.tianbeiwen.com:8000/f/5ff72303ea1046cd9fff/)（24.9GB）GPU版本镜像。运行GPU版本需要**原生Linux环境**并按照[上一节](./install-docker.md#3-dockergpu)**安装Docker的GPU扩展**。
+[点此下载](https://cloud.tianbeiwen.com:8000/f/8fe64d8dca9143c59dcd/)（15.9GB）CPU版本镜像，或[点此下载](https://cloud.tianbeiwen.com:8000/f/5ff72303ea1046cd9fff/)（24.9GB）GPU版本镜像。
+
+运行GPU版本镜像需要**Linux系统**或**Windows系统的WSL**方式准备环境，并完成**安装Docker的GPU扩展**。
 
 将镜像文件重命名为 `sim-headless.tar`，然后导入 Linux 环境的目录下，在该目录下执行：
 
