@@ -24,6 +24,8 @@ nav:
   - 实验介绍:
     - 系统架构: ARCH.md
     - 镜像平台与自动评测系统: REGISTRY.md
+    - 作业:
+      - HW1: hw1.md
     - 比赛项目:
       - RMUS 2022: CONTEST.md
       - 2022秋季课程: CONTEST-2022FALL.md
