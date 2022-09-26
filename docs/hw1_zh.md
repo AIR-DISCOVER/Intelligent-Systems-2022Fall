@@ -12,73 +12,84 @@
 
 ## 我要怎样完成这次作业？
 
-1. 将作业仓库克隆至本地
+### 克隆作业仓库
+
+将作业仓库克隆至本地
    
-   ```shell
-   git clone https://github.com/AIR-DISCOVER/IS2022Fall-hw1.git
-   ```
-2. 补充 `course_ws/src/me_arm/script/reverse.py` 文件中的实现。
+```
+git clone https://github.com/AIR-DISCOVER/IS2022Fall-hw1.git
+```
    
-   标注有 `[TODO]`的部分是需要你实现的。 
-3. 在 `IS2022Fall-hw1` 目录下，执行以下命令将项目编译为Docker镜像。
+### 补充实现 
+
+补充 `course_ws/src/me_arm/script/reverse.py` 文件中的实现。
    
-   ```shell
-   docker build . -t docker.discover-lab.com:55555/[Student ID]/client:hw1 
-   ```
+标注有 `[TODO]`的部分是需要你实现的。 
+
+### 将项目编译为镜像
+
+在 `IS2022Fall-hw1` 目录下，执行以下命令将项目编译为Docker镜像。
+   
+```
+docker build . -t docker.discover-lab.com:55555/[Student ID]/client:hw1 
+```
 
 ## 如何检验我的实现是否正确？
 
 > 首先启动仿真环境，并将相机可视化
 
-1. 启动仿真容器：
+### 启动仿真容器
 
-   注意，在本次作业中，仿真环境的 tag 为 **hw1**。
+注意，在本次作业中，仿真环境的 tag 为 **hw1**。
 
-   在**新的终端**中执行以下命令启动仿真环境：
-   
-   ```shell
-   docker network create net-sim
-   docker run -dit --rm --name ros-master --network net-sim ros:noetic-ros-core-focal roscore
-   docker run -it --rm --name sim-server --network net-sim -e ROS_MASTER_URI="http://ros-master:11311" --gpus all docker.discover-lab.com:55555/rmus-2022-fall/sim-headless:hw1
-   ```
-2. 可视化相机输出：
+在**新的终端**中执行以下命令启动仿真环境：
 
-   在**新的终端**执行以下命令启动可视化：
-   
-   ```shell
-   xhost +
-   docker run -dit --rm --name ros-gui --network net-sim -e ROS_MASTER_URI=http://ros-master:11311 -e DISPLAY=$DISPLAY -e QT_X11_NO_MITSHM=1 -v /tmp/.X11-unix:/tmp/.X11-unix docker.discover-lab.com:55555/rmus-2022-fall/ros-gui bash
-   docker exec -dit ros-gui /opt/ros/noetic/env.sh rosrun image_view image_view image:=/third_rgb
-   ```
-3. 根据[上一节](#2)编译得到的镜像创建<u>控制容器</u>并执行：
+```shell
+docker network create net-sim
+docker run -dit --rm --name ros-master --network net-sim ros:noetic-ros-core-focal roscore
+docker run -it --rm --name sim-server --network net-sim -e ROS_MASTER_URI="http://ros-master:11311" --gpus all docker.discover-lab.com:55555/rmus-2022-fall/sim-headless:hw1
+```
 
-   在**新的终端**执行以下命令启动作业容器：
+### 可视化相机输出
 
-   ```shell
-   docker run -it --rm -e ROS_MASTER_URI="http://ros-master:11311" --network net-sim --name hw1 docker.discover-lab.com:55555/[Student ID]/client:hw1
-   ```
-> 检查实现的正确性
+在**新的终端**执行以下命令启动可视化：
 
-4. 下面的命令会初始化场景，随机生成1/2/3层木块（最顶层木块一定为木块5），并将小车放在距离木块较近的***<u>随机位置</u>***。
-   
-   ```shell
-   docker exec -it ros-master /opt/ros/noetic/env.sh rostopic pub /reset geometry_msgs/Point "x: 0.0
-   y: 0.0
-   z: 0.0"
-   ```
-   
-   正确实现的控制容器，无论小车和木块的相对位置如何，每一次随机初始化后小车的夹爪都会放在**木块5所在的位置**。
+```shell
+xhost +
+docker run -dit --rm --name ros-gui --network net-sim -e ROS_MASTER_URI=http://ros-master:11311 -e DISPLAY=$DISPLAY -e QT_X11_NO_MITSHM=1 -v /tmp/.X11-unix:/tmp/.X11-unix docker.discover-lab.com:55555/rmus-2022-fall/ros-gui bash
+docker exec -dit ros-gui /opt/ros/noetic/env.sh rosrun image_view image_view image:=/third_rgb
+```
 
-> 实验收尾
+### 创建控制容器
 
-5. 停止运行中的容器
+根据[上一节](#2)编译得到的镜像创建<u>控制容器</u>并执行：
 
-   ```shell
-   docker network rm net-sim
-   docker stop hw1
-   docker stop sim-server
-   docker stop ros-master
-   ```
+在**新的终端**执行以下命令启动作业容器：
+
+```shell
+docker run -it --rm -e ROS_MASTER_URI="http://ros-master:11311" --network net-sim --name hw1 docker.discover-lab.com:55555/[Student ID]/client:hw1
+```
+
+### 检查实现的正确性
+
+下面的命令会初始化场景，随机生成1/2/3层木块（最顶层木块一定为木块5），并将小车放在距离木块较近的***<u>随机位置</u>***。
+
+```shell
+docker exec -it ros-master /opt/ros/noetic/env.sh rostopic pub /reset geometry_msgs/Point "x: 0.0
+y: 0.0
+z: 0.0"
+```
+
+正确实现的控制容器，无论小车和木块的相对位置如何，每一次随机初始化后小车的夹爪都会放在**木块5所在的位置**。
+
+### 停止运行中的容器
+
+```shell
+docker network rm net-sim
+docker stop hw1
+docker stop sim-server
+docker stop ros-master
+```
 
 ## 如何提交我的作业？
 
