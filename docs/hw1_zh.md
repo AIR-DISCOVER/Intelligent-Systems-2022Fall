@@ -66,7 +66,7 @@ docker exec -dit ros-gui /opt/ros/noetic/env.sh rosrun image_view image_view ima
 
 ### 创建控制容器
 
-根据[上一节](#2)编译得到的镜像创建<u>控制容器</u>并执行：
+根据[上一节](#23)编译得到的镜像创建<u>控制容器</u>并执行：
 
 在**新的终端**执行以下命令启动作业容器：
 
