@@ -79,12 +79,14 @@ docker run -it --rm -e ROS_MASTER_URI="http://ros-master:11311" --network net-si
 下面的命令会初始化场景，随机生成1/2/3层木块（最顶层木块一定为木块5），并将小车放在距离木块较近的***<u>随机位置</u>***。
 
 ```shell
-docker exec -it ros-master /opt/ros/noetic/env.sh rostopic pub /reset geometry_msgs/Point "x: 0.0
+docker exec -it ros-master /opt/ros/noetic/env.sh rostopic pub -1 /reset geometry_msgs/Point "x: 0.0
 y: 0.0
 z: 0.0"
 ```
 
 正确实现的控制容器，无论小车和木块的相对位置如何，每一次随机初始化后小车的夹爪都会放在**木块5所在的位置**。
+
+![reverse-demo](assets/hw1-reverse.gif)
 
 ### 停止运行中的容器
 
