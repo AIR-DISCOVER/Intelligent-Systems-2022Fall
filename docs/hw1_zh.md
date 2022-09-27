@@ -67,9 +67,19 @@ docker build . -t docker.discover-lab.com:55555/[Student ID]/client:hw1
 
 注意，在本次作业中，仿真环境的 tag 为 **hw1**。
 
-在**新的终端**中执行以下命令启动仿真环境：
+在**新的终端**中执行以下命令启动仿真环境（CPU）：
 
 ```shell
+docker pull docker.discover-lab.com:55555/rmus-2022-fall/sim-headless-cpu:hw1
+docker network create net-sim
+docker run -dit --rm --name ros-master --network net-sim ros:noetic-ros-core-focal roscore
+docker run -it --rm --name sim-server --network net-sim -e ROS_MASTER_URI="http://ros-master:11311" -e DISPLAY=$DISPLAY -e QT_X11_NO_MITSHM=1 -v /tmp/.X11-unix:/tmp/.X11-unix -e LIBGL_ALWAYS_SOFTWARE=1 docker.discover-lab.com:55555/rmus-2022-fall/sim-headless-cpu:hw1
+```
+
+在**新的终端**中执行以下命令启动仿真环境（GPU）：
+
+```shell
+docker pull docker.discover-lab.com:55555/rmus-2022-fall/sim-headless:hw1
 docker network create net-sim
 docker run -dit --rm --name ros-master --network net-sim ros:noetic-ros-core-focal roscore
 docker run -it --rm --name sim-server --network net-sim -e ROS_MASTER_URI="http://ros-master:11311" --gpus all docker.discover-lab.com:55555/rmus-2022-fall/sim-headless:hw1
