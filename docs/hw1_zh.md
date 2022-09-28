@@ -36,7 +36,7 @@ def inverse_kinematics(self, cube_pose, ep_pose):
 将作业仓库克隆至本地：
 
 ```
-git clone https://git.tsinghua.edu.cn/intelligent-system-2022fall/hw1.git
+git clone https://gitee.com/tb5zhh/is2022-fall-hw1.git
 ```
 
 或
