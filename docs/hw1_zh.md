@@ -14,7 +14,7 @@
 
 我们已经完成了这个控制节点的整体架构以及和仿真环境的交互接口，同学们只需要完成**根据相对位置解算关节角**的这一部分即可。
 
-具体而言，同学们只需要补充 `course_ws/src/me_arm/script/reverse.py` 文件中的实现即可完成作业：
+具体而言，同学们只需要补充 `course_ws/src/me_arm/script/inverse.py` 文件中的实现即可完成作业：
 
 ```python
 def inverse_kinematics(self, cube_pose, ep_pose):
