@@ -47,7 +47,7 @@ git clone https://github.com/AIR-DISCOVER/IS2022Fall-hw1.git
 
 ### 补充实现 
 
-补充 `course_ws/src/me_arm/script/reverse.py` 文件中的实现。
+补充 `course_ws/src/me_arm/script/inverse.py` 文件中的实现。
 
 标注有 `[TODO]`的部分是需要你实现的。 
 
