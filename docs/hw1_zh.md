@@ -73,6 +73,7 @@ docker build . -t docker.discover-lab.com:55555/[Student ID]/client:hw1
 docker pull docker.discover-lab.com:55555/rmus-2022-fall/sim-headless-cpu:hw1
 docker network create net-sim
 docker run -dit --rm --name ros-master --network net-sim ros:noetic-ros-core-focal roscore
+xhost +
 docker run -it --rm --name sim-server --network net-sim -e ROS_MASTER_URI="http://ros-master:11311" -e DISPLAY=$DISPLAY -e QT_X11_NO_MITSHM=1 -v /tmp/.X11-unix:/tmp/.X11-unix -e LIBGL_ALWAYS_SOFTWARE=1 docker.discover-lab.com:55555/rmus-2022-fall/sim-headless-cpu:hw1
 ```
 
@@ -82,6 +83,7 @@ docker run -it --rm --name sim-server --network net-sim -e ROS_MASTER_URI="http:
 docker pull docker.discover-lab.com:55555/rmus-2022-fall/sim-headless:hw1
 docker network create net-sim
 docker run -dit --rm --name ros-master --network net-sim ros:noetic-ros-core-focal roscore
+xhost +
 docker run -it --rm --name sim-server --network net-sim -e ROS_MASTER_URI="http://ros-master:11311" --gpus all docker.discover-lab.com:55555/rmus-2022-fall/sim-headless:hw1
 ```
 
