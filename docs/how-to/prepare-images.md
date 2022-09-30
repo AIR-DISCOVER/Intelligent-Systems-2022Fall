@@ -43,7 +43,7 @@ docker pull docker.discover-lab.com:55555/rmus-2022-fall/sim-headless-cpu
 
 ```shell
 # GPU版本，更快更流畅，但需要NVIDIA显卡
-docker pull docker.discover-lab.com:55555/rmus-2022-fall/sim-headless-cpu
+docker pull docker.discover-lab.com:55555/rmus-2022-fall/sim-headless
 ```
 
 运行GPU版本镜像需要**Linux系统**或**Windows系统的WSL**方式准备环境，并完成**安装Docker的GPU扩展**。
