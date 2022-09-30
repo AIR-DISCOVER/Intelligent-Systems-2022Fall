@@ -27,7 +27,7 @@ def inverse_kinematics(self, cube_pose, ep_pose):
 
 其中，传入的`cube_pose`和`ep_pose`均为长度为3的浮点数数组，表示物块和小车在世界坐标系下的坐标。同学们需要根据二者的相对位置解算出上图中的两个关节角度（弧度），并以数组的方式返回。
 
-注意，世界坐标系的方向[如图所示](https://air-discover.github.io/Intelligent-Systems-2022Fall/EP/#3-environment)。实验过程中，保证小车机械臂与物块在同一条直线上。
+注意，世界坐标系的方向[如图所示](https://air-discover.github.io/Intelligent-Systems-2022Fall/EP/#3-environment)。实验过程中，保证物块在小车前方，物块在机械臂所在平面上。
 
 ## 我要怎样完成这次作业？
 
