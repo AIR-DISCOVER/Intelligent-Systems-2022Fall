@@ -4,6 +4,63 @@
 
 ## 这次作业的目标是什么？
 
+本次作业的目标是根据第一人称视角相机拍摄得到的图像（下图1），找到图中包含的物块相对小车的位姿，并给出物块上所写的数字（下图2）。
+
+![demo1](assets/hw2_1_demo.png)
+
+![demo1](assets/hw2_2_demo.png)
+
+本次作业中实验框架已经搭建完成，实验过程分为三步：
+
+1. 处理输入图像，生成一张相同尺寸的掩码图，掩码图中物块部分为255，其他部分为0
+2. 根据掩码图以及相机内参矩阵，找到物块面顶点在图像上的坐标，以及其变换矩阵
+3. 根据找到的物块面对数字进行分类
+
+其中第三步已经给出完整实现，同学们不需要在作业中完成（但是仍然推荐阅读给出的实现）；第一步和第二步分别对应`course_ws/src/marker_location/scripts/img_processor.py`文件中的`Processor.preprocess`与`Processor.detect_square`函数，同学们在此次作业中需要实现这两个函数。
+
+```python
+def preprocess(self, frame):
+    """Preprocess the image captured by the camera, so that pixels that belong to cubes have the value of 255 while the counterparts have the value of 0
+
+    Args:
+        frame (numpy.ndarray): Captured image in RGB channels
+
+    Returns:
+        numpy.ndarray: The mask of cubes. Numpy array of the same shape as frame
+    """
+    image_bool = frame
+
+    ############# TODO ##############
+        
+    #################################
+
+    return image_bool
+```
+
+```python
+def detect_square(self, image_bool, camera_matrix):
+    """Find the quad containing numbers within given frames, along with their poses in the environment
+
+    Args:
+        image_bool (numpy.ndarray): The mask of cubes provided by preprocess function
+        camera_matrix (numpy.ndarray): The intrinsic matrix of the camera, 3x3
+
+    Returns:
+        (q, t, r):
+        - q: quad position on the image
+        - t: quad translation vectors
+        - r: quad rotation vectors
+    """
+
+    quads_prj, tvec_list, rvec_list = None, None, None
+
+    ############# TODO ##############
+        
+    #################################
+
+    return quads_prj, tvec_list, rvec_list
+```
+
 ## 我要怎样完成这次作业？
 
 ### 克隆作业仓库
@@ -34,7 +91,7 @@ git clone https://github.com/AIR-DISCOVER/IS2022Fall-hw2.git
 在 `IS2022Fall-hw2` 目录下，执行以下命令将项目编译为Docker镜像。
 
 ```
-docker build . -t docker.discover-lab.com:55555/[Student ID]/client:hw2 
+docker build . -t docker.discover-lab.com:55555/[Student ID]/client:hw2 --network host
 ```
 
 ## 如何检验我的实现是否正确？
@@ -77,6 +134,7 @@ docker run -it --rm --name sim-server --network net-sim \
 在**新的终端**执行以下命令启动作业容器：
 
 ```shell
+xhost +
 docker run -it --rm --network net-sim --name hw2 \
     -e DISPLAY=$DISPLAY \
     -e QT_X11_NO_MITSHM=1 \
