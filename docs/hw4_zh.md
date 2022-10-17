@@ -29,7 +29,7 @@ git clone --recursive https://gitee.com/tb5zhh/is2022-fall-hw4.git
 git clone --recursive https://github.com/AIR-DISCOVER/IS2022Fall-hw4.git
 ```
 
-或[点击这里](TODO)下载压缩包。
+或[点击这里](https://cloud.tsinghua.edu.cn/f/b06174c685a048838565/)下载压缩包。
 
 ### 修改参数
 
