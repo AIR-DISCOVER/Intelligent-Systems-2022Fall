@@ -1,4 +1,4 @@
-# 作业4 - 基于 Cartographer 的小车定位
+# 作业4 - 小车导航
 
 **在本次作业中，请将 `launch.sh` 中的 `ID=test` 改为 `ID=[Student ID]` ，其中 `[Student ID]` 为自己的学号。**
 
