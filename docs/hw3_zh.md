@@ -35,8 +35,14 @@ git clone https://github.com/AIR-DISCOVER/IS2022Fall-hw3.git
 
 在 `IS2022Fall-hw3` 目录下，执行以下命令：
 
+（GPU版本）
 ```shell
 ./launch.sh
+```
+
+（CPU版本）
+```shell
+./launch_cpu.sh
 ```
 
 等待命令执行，出现以下界面时，表明已经完成编译控制节点、启动仿真环境、启动可视化、启动控制节点、启动键盘控制：
