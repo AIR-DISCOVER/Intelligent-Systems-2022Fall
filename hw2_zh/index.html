@@ -1,0 +1,1103 @@
+
+<!doctype html>
+<html lang="zh" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      <link rel="icon" href="../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.4.1, mkdocs-material-8.5.7">
+    
+    
+      
+        <title>HW2 - 智能系统设计与实践</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/main.20d9efc8.min.css">
+      
+        
+        <link rel="stylesheet" href="../assets/stylesheets/palette.cbb835fc.min.css">
+        
+      
+      
+
+    
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="" data-md-color-primary="none" data-md-color-accent="none">
+  
+    
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#2-" class="md-skip">
+          跳转至
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="页眉">
+    <a href=".." title="智能系统设计与实践" class="md-header__button md-logo" aria-label="智能系统设计与实践" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2Z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            智能系统设计与实践
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              HW2
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+    
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+<nav class="md-nav md-nav--primary" aria-label="导航栏" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href=".." title="智能系统设计与实践" class="md-nav__button md-logo" aria-label="智能系统设计与实践" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"/></svg>
+
+    </a>
+    智能系统设计与实践
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href=".." class="md-nav__link">
+        欢迎
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../INTRO/" class="md-nav__link">
+        课程概述
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+    
+  
+  
+    
+      
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_3" type="checkbox" id="__nav_3" checked>
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_3">
+          实验介绍
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="实验介绍" data-md-level="1">
+        <label class="md-nav__title" for="__nav_3">
+          <span class="md-nav__icon md-icon"></span>
+          实验介绍
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ARCH/" class="md-nav__link">
+        系统架构
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../REGISTRY/" class="md-nav__link">
+        镜像平台与自动评测系统
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+    
+  
+  
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_3_3" type="checkbox" id="__nav_3_3" checked>
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_3_3">
+          作业
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="作业" data-md-level="2">
+        <label class="md-nav__title" for="__nav_3_3">
+          <span class="md-nav__icon md-icon"></span>
+          作业
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../hw1_zh/" class="md-nav__link">
+        HW1
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+    
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          HW2
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        HW2
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="目录">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      目录
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#1" class="md-nav__link">
+    1. 这次作业的目标是什么？
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2" class="md-nav__link">
+    2. 我要怎样完成这次作业？
+  </a>
+  
+    <nav class="md-nav" aria-label="2. 我要怎样完成这次作业？">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#21" class="md-nav__link">
+    2.1 克隆作业仓库
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#22" class="md-nav__link">
+    2.2 补充实现
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#23" class="md-nav__link">
+    2.3 将项目编译为镜像
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3" class="md-nav__link">
+    3. 如何检验我的实现是否正确？
+  </a>
+  
+    <nav class="md-nav" aria-label="3. 如何检验我的实现是否正确？">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#31" class="md-nav__link">
+    3.1 启动仿真容器
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#32" class="md-nav__link">
+    3.2 创建控制容器
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#33" class="md-nav__link">
+    3.3 检查实现的正确性
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#34" class="md-nav__link">
+    3.4 停止运行中的容器
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#4" class="md-nav__link">
+    4. 如何提交我的作业？
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../hw3_zh/" class="md-nav__link">
+        HW3
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../hw4_zh/" class="md-nav__link">
+        HW4
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" data-md-toggle="__nav_3_4" type="checkbox" id="__nav_3_4" checked>
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_3_4">
+          比赛项目
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="比赛项目" data-md-level="2">
+        <label class="md-nav__title" for="__nav_3_4">
+          <span class="md-nav__icon md-icon"></span>
+          比赛项目
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../CONTEST/" class="md-nav__link">
+        RMUS 2022
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../CONTEST-2022FALL/" class="md-nav__link">
+        2022秋季课程
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+      
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" data-md-toggle="__nav_4" type="checkbox" id="__nav_4" checked>
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_4">
+          操作指南
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="操作指南" data-md-level="1">
+        <label class="md-nav__title" for="__nav_4">
+          <span class="md-nav__icon md-icon"></span>
+          操作指南
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" data-md-toggle="__nav_4_1" type="checkbox" id="__nav_4_1" checked>
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_4_1">
+          准备环境
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="准备环境" data-md-level="2">
+        <label class="md-nav__title" for="__nav_4_1">
+          <span class="md-nav__icon md-icon"></span>
+          准备环境
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../how-to/vm/" class="md-nav__link">
+        Windows系统-虚拟机
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../how-to/wsl/" class="md-nav__link">
+        Windows系统-WSL
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../how-to/linux-docker/" class="md-nav__link">
+        Linux系统
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../how-to/prepare-images/" class="md-nav__link">
+        获取Docker镜像
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../how-to/start-sim-env/" class="md-nav__link">
+        启动仿真环境
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../how-to/start-sim-ep/" class="md-nav__link">
+        启动仿真EP
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+      
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" data-md-toggle="__nav_5" type="checkbox" id="__nav_5" checked>
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_5">
+          参数与接口
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="参数与接口" data-md-level="1">
+        <label class="md-nav__title" for="__nav_5">
+          <span class="md-nav__icon md-icon"></span>
+          参数与接口
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../EP/" class="md-nav__link">
+        Robomaster EP
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../FAQ/" class="md-nav__link">
+        FAQ
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../UPDATES/" class="md-nav__link">
+        更新说明
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="目录">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      目录
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#1" class="md-nav__link">
+    1. 这次作业的目标是什么？
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2" class="md-nav__link">
+    2. 我要怎样完成这次作业？
+  </a>
+  
+    <nav class="md-nav" aria-label="2. 我要怎样完成这次作业？">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#21" class="md-nav__link">
+    2.1 克隆作业仓库
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#22" class="md-nav__link">
+    2.2 补充实现
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#23" class="md-nav__link">
+    2.3 将项目编译为镜像
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3" class="md-nav__link">
+    3. 如何检验我的实现是否正确？
+  </a>
+  
+    <nav class="md-nav" aria-label="3. 如何检验我的实现是否正确？">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#31" class="md-nav__link">
+    3.1 启动仿真容器
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#32" class="md-nav__link">
+    3.2 创建控制容器
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#33" class="md-nav__link">
+    3.3 检查实现的正确性
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#34" class="md-nav__link">
+    3.4 停止运行中的容器
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#4" class="md-nav__link">
+    4. 如何提交我的作业？
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+<h1 id="2-">作业2 - 数字定位与识别</h1>
+<p><strong>在下列教程中，请将 <code>[Student ID]</code> （包括括号）替换为自己的学号。</strong></p>
+<h2 id="1">1. 这次作业的目标是什么？</h2>
+<p>本次作业的目标是根据第一人称视角相机拍摄得到的图像（下图1），找到图中包含的物块相对小车的位姿，并给出物块上所写的数字（下图2）。</p>
+<p><img alt="demo1" src="../assets/hw2_1_demo.png" /></p>
+<p><img alt="demo1" src="../assets/hw2_2_demo.png" /></p>
+<p>本次作业中实验框架已经搭建完成，实验过程分为三步：</p>
+<ol>
+<li>处理输入图像，生成一张相同尺寸的掩码图，掩码图中物块部分为255，其他部分为0</li>
+<li>根据掩码图以及相机内参矩阵，找到物块面顶点在图像上的坐标，以及其变换矩阵</li>
+<li>根据找到的物块面对数字进行分类</li>
+</ol>
+<p>其中第三步已经给出完整实现，同学们不需要在作业中完成（但是仍然推荐阅读给出的实现）；第一步和第二步分别对应<code>course_ws/src/marker_location/scripts/img_processor.py</code>文件中的<code>Processor.preprocess</code>与<code>Processor.detect_square</code>函数，同学们在此次作业中需要实现这两个函数。</p>
+<pre><code class="language-python">def preprocess(self, frame):
+    &quot;&quot;&quot;Preprocess the image captured by the camera, so that pixels that belong to cubes have the value of 255 while the counterparts have the value of 0
+
+    Args:
+        frame (numpy.ndarray): Captured image in RGB channels
+
+    Returns:
+        numpy.ndarray: The mask of cubes. Numpy array of the same shape as frame
+    &quot;&quot;&quot;
+    image_bool = frame
+
+    ############# TODO ##############
+
+    #################################
+
+    return image_bool
+</code></pre>
+<pre><code class="language-python">def detect_square(self, image_bool, camera_matrix):
+    &quot;&quot;&quot;Find the quad containing numbers within given frames, along with their poses in the environment
+
+    Args:
+        image_bool (numpy.ndarray): The mask of cubes provided by preprocess function
+        camera_matrix (numpy.ndarray): The intrinsic matrix of the camera, 3x3
+
+    Returns:
+        (q, t, r):
+        - q: quad position on the image
+        - t: quad translation vectors
+        - r: quad rotation vectors
+    &quot;&quot;&quot;
+
+    quads_prj, tvec_list, rvec_list = None, None, None
+
+    ############# TODO ##############
+
+    #################################
+
+    return quads_prj, tvec_list, rvec_list
+</code></pre>
+<h2 id="2">2. 我要怎样完成这次作业？</h2>
+<h3 id="21">2.1 克隆作业仓库</h3>
+<p>将作业仓库克隆至本地：</p>
+<pre><code>git clone https://gitee.com/tb5zhh/is2022-fall-hw2.git
+</code></pre>
+<p>或</p>
+<pre><code>git clone https://github.com/AIR-DISCOVER/IS2022Fall-hw2.git
+</code></pre>
+<h3 id="22">2.2 补充实现</h3>
+<p>补充 <code>course_ws/src/marker_location/scripts/img_processor.py</code> 文件中的实现。</p>
+<p>标注有 <code>[TODO]</code>的部分是需要完成的，你需要实现：</p>
+<ol>
+<li><code>Processor.preprocess</code>: 传入参数为 <code>numpy.ndarray</code> 格式的相机输出图像（尺寸为 <code>HxWx3</code> ）；需要返回尺寸为 <code>HxWx1</code> 的 <code>numpy.ndarray</code> 格式的掩码图，其中物块所在的像素需赋值为255，其他区域需赋值为0.</li>
+<li><code>Processor.detect_square</code>: 传入参数为 <code>numpy.ndarray</code> 格式的掩码图（ <code>preprocess</code> 函数的输出）以及尺寸为 <code>3x3</code> 的相机内参矩阵；需要找到图片中的所有的物块表面，并返回 a. 这些表面的顶点在图像上的像素坐标 b. 从相机到物块表面的位移向量 c. 从相机到物块表面的旋转向量。具体参数与返回值的定义与说明详见代码注释。</li>
+</ol>
+<h3 id="23">2.3 将项目编译为镜像</h3>
+<p>在 <code>IS2022Fall-hw2</code> 目录下，执行以下命令将项目编译为Docker镜像。</p>
+<pre><code>docker build . -t docker.discover-lab.com:55555/[Student ID]/client:hw2 --network host
+</code></pre>
+<h2 id="3">3. 如何检验我的实现是否正确？</h2>
+<h3 id="31">3.1 启动仿真容器</h3>
+<p>注意，在本次作业中，仿真环境的 tag 为 <strong>hw2</strong>。</p>
+<p>在<strong>新的终端</strong>中执行以下命令启动仿真环境（CPU）：</p>
+<pre><code class="language-shell">docker pull docker.discover-lab.com:55555/rmus-2022-fall/sim-headless-cpu:v4.1.0-hw2
+docker network create net-sim
+docker run -dit --rm --name ros-master --network net-sim ros:noetic-ros-core-focal roscore
+docker run -it --rm --name sim-server --network net-sim \
+    -e ROS_MASTER_URI=&quot;http://ros-master:11311&quot; \
+    -e DISPLAY=$DISPLAY \
+    -e QT_X11_NO_MITSHM=1 \
+    -e LIBGL_ALWAYS_SOFTWARE=1 \
+    -v /tmp/.X11-unix:/tmp/.X11-unix 
+    docker.discover-lab.com:55555/rmus-2022-fall/sim-headless:v4.1.0-hw2 
+</code></pre>
+<p>在<strong>新的终端</strong>中执行以下命令启动仿真环境（GPU）：</p>
+<pre><code class="language-shell">docker pull docker.discover-lab.com:55555/rmus-2022-fall/sim-headless:v4.1.0-hw2
+docker network create net-sim
+docker run -dit --rm --name ros-master --network net-sim ros:noetic-ros-core-focal roscore
+docker run -it --rm --name sim-server --network net-sim \
+    -e ROS_MASTER_URI=&quot;http://ros-master:11311&quot; \
+    -e DISPLAY=$DISPLAY \
+    -e QT_X11_NO_MITSHM=1 \
+    -e LIBGL_ALWAYS_SOFTWARE=1 \
+    -v /tmp/.X11-unix:/tmp/.X11-unix 
+    --gpus all -e NVIDIA_DRIVER_CAPABILITIES=all \
+    docker.discover-lab.com:55555/rmus-2022-fall/sim-headless:v4.1.0-hw2 
+</code></pre>
+<h3 id="32">3.2 创建控制容器</h3>
+<p>根据<a href="#将项目编译为镜像">上一节</a>编译得到的镜像创建<u>控制容器</u>并执行：</p>
+<p>在<strong>新的终端</strong>执行以下命令启动作业容器：</p>
+<pre><code class="language-shell">xhost +
+docker run -it --rm --network net-sim --name hw2 \
+    -e DISPLAY=$DISPLAY \
+    -e QT_X11_NO_MITSHM=1 \
+    -e ROS_MASTER_URI=http://ros-master:11311 \
+    -v /tmp/.X11-unix:/tmp/.X11-unix \
+    docker.discover-lab.com:55555/[Student ID]/client:hw2
+</code></pre>
+<p>执行该命令后，会出现两个可视化界面：</p>
+<ol>
+<li>第一个界面展示 <code>Processor.preprocess</code> 函数返回的掩码图（黑白）。该函数正确实现后，可视化界面应如下图所示：
+   <img alt="viz1" src="../assets/vis1.png" /></li>
+<li>第二个界面将 <code>Processor.detect_square</code> 函数返回的数字所在物块平面信息，以标注的形式附加在第一人称视角相机的画面上。该函数正确实现后，可视化界面应如下图所示：
+   <img alt="viz2" src="../assets/vis2.png" /></li>
+</ol>
+<h3 id="33">3.3 检查实现的正确性</h3>
+<p>按照<a href="https://air-discover.github.io/Intelligent-Systems-2022Fall/how-to/start-sim-ep/#2">这里</a>的方式控制小车移动，可以在可视化窗口2中发现，标注框始终与物块面重合：</p>
+<p><img alt="reverse-demo" src="../assets/hw2.gif" /></p>
+<h3 id="34">3.4 停止运行中的容器</h3>
+<pre><code class="language-shell">docker network rm net-sim
+docker stop hw2
+docker stop sim-server
+docker stop ros-master
+</code></pre>
+<h2 id="4">4. 如何提交我的作业？</h2>
+<p>如果你确认你的实现正确，你可以通过以下命令将你的控制容器镜像推送到课程Docker平台。</p>
+<p>我们的评测系统会自动运行你的容器并打分。    </p>
+<pre><code class="language-shell">docker login docker.discover-lab.com:55555
+# Input your Student ID and password
+# The default password is [Student ID]ABCdef
+# You can change it later in https://docker.discover-lab.com:55555
+docker push docker.discover-lab.com:55555/[Student ID]/client:hw2
+</code></pre>
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+        </div>
+        
+          <a href="#" class="md-top md-icon" data-md-component="top" hidden>
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8v12Z"/></svg>
+            回到页面顶部
+          </a>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+    
+    <nav class="md-footer__inner md-grid" aria-label="页脚" >
+      
+        
+        <a href="../hw1_zh/" class="md-footer__link md-footer__link--prev" aria-label="上一页: HW1" rel="prev">
+          <div class="md-footer__button md-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+          </div>
+          <div class="md-footer__title">
+            <div class="md-ellipsis">
+              <span class="md-footer__direction">
+                上一页
+              </span>
+              HW1
+            </div>
+          </div>
+        </a>
+      
+      
+        
+        <a href="../hw3_zh/" class="md-footer__link md-footer__link--next" aria-label="下一页: HW3" rel="next">
+          <div class="md-footer__title">
+            <div class="md-ellipsis">
+              <span class="md-footer__direction">
+                下一页
+              </span>
+              HW3
+            </div>
+          </div>
+          <div class="md-footer__button md-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4Z"/></svg>
+          </div>
+        </a>
+      
+    </nav>
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    <script id="__config" type="application/json">{"base": "..", "features": ["navigation.instant", "navigation.tracking", "navigation.top", "navigation.expand", "navigation.sections"], "search": "../assets/javascripts/workers/search.16e2a7d4.min.js", "translations": {"clipboard.copied": "\u5df2\u590d\u5236", "clipboard.copy": "\u590d\u5236", "search.config.lang": "ja", "search.config.pipeline": "trimmer, stemmer", "search.config.separator": "[\\s\\-\uff0c\u3002]+", "search.placeholder": "\u641c\u7d22", "search.result.more.one": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.more.other": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 # \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.none": "\u6ca1\u6709\u627e\u5230\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.one": "\u627e\u5230 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.other": "# \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.placeholder": "\u952e\u5165\u4ee5\u5f00\u59cb\u641c\u7d22", "search.result.term.missing": "\u7f3a\u5c11", "select.version.title": "\u9009\u62e9\u5f53\u524d\u7248\u672c"}}</script>
+    
+    
+      <script src="../assets/javascripts/bundle.8492ddcf.min.js"></script>
+      
+        <script src="../javascripts/mathjax.js"></script>
+      
+        <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+      
+        <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+      
+    
+  </body>
+</html>
