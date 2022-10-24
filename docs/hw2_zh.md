@@ -103,7 +103,7 @@ docker build . -t docker.discover-lab.com:55555/[Student ID]/client:hw2 --networ
 在**新的终端**中执行以下命令启动仿真环境（CPU）：
 
 ```shell
-docker pull docker.discover-lab.com:55555/rmus-2022-fall/sim-headless-cpu:hw2
+docker pull docker.discover-lab.com:55555/rmus-2022-fall/sim-headless-cpu:v4.1.0-hw2
 docker network create net-sim
 docker run -dit --rm --name ros-master --network net-sim ros:noetic-ros-core-focal roscore
 docker run -it --rm --name sim-server --network net-sim \
@@ -111,20 +111,24 @@ docker run -it --rm --name sim-server --network net-sim \
     -e DISPLAY=$DISPLAY \
     -e QT_X11_NO_MITSHM=1 \
     -e LIBGL_ALWAYS_SOFTWARE=1 \
-    -v /tmp/.X11-unix:/tmp/.X11-unix \
-    docker.discover-lab.com:55555/rmus-2022-fall/sim-headless-cpu:hw2
+    -v /tmp/.X11-unix:/tmp/.X11-unix 
+    docker.discover-lab.com:55555/rmus-2022-fall/sim-headless:v4.1.0-hw2 
 ```
 
 在**新的终端**中执行以下命令启动仿真环境（GPU）：
 
 ```shell
-docker pull docker.discover-lab.com:55555/rmus-2022-fall/sim-headless:hw2
+docker pull docker.discover-lab.com:55555/rmus-2022-fall/sim-headless:v4.1.0-hw2
 docker network create net-sim
 docker run -dit --rm --name ros-master --network net-sim ros:noetic-ros-core-focal roscore
 docker run -it --rm --name sim-server --network net-sim \
     -e ROS_MASTER_URI="http://ros-master:11311" \
-    --gpus all \
-    docker.discover-lab.com:55555/rmus-2022-fall/sim-headless:hw2
+    -e DISPLAY=$DISPLAY \
+    -e QT_X11_NO_MITSHM=1 \
+    -e LIBGL_ALWAYS_SOFTWARE=1 \
+    -v /tmp/.X11-unix:/tmp/.X11-unix 
+    --gpus all -e NVIDIA_DRIVER_CAPABILITIES=all \
+    docker.discover-lab.com:55555/rmus-2022-fall/sim-headless:v4.1.0-hw2 
 ```
 
 ### 创建控制容器
